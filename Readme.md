@@ -24,10 +24,13 @@ const imgs = [
   {
     id: 'id_1',                  // unique id of an image
     img: '/path/to/image.png',   // or a buffer - passed to sharp-object
-    dim: { width, height }       // optional - will be computed if not provided
+    dim: { width, height }
+    resize: false                // optional - if truthy image will be resized to cover `dim`
   }
 ];
-const { layout, sprite } = await so.create(imgs);
+const { layout, sprite } = await so.create(imgs, {
+  format: 'png'                  // optional - passed to `sharp.toFormat()`
+});
 ```
 
 To generate grid sprite (if all the images are that same size):
@@ -38,7 +41,9 @@ To generate grid sprite (if all the images are that same size):
 const { layout, sprite } = await so.createGrid(
   imgs,
   {
-    dim: { width: 10, height: 15 }
+    dim: { width: 10, height: 15 },
+    columns: 12,       // desired number of columns in the grid              
+    format: 'png'      // optional - passed to `sharp.toFormat()`
   }
 );
 ```
