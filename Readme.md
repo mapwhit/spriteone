@@ -2,7 +2,7 @@
 [![Build Status][build-image]][build-url]
 [![Dependency Status][deps-image]][deps-url]
 
-# @mapwhit/sprite
+# @mapwhit/spriteone
 
 Create sprite layout and generate sprite based on it.
 Heavily inspired by [@mapbox/spritezero] but with simplified API and [sharp] replacing [mapnik].
