@@ -1,6 +1,6 @@
 {
   "name": "@mapwhit/spriteone",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Generate sprites based on predefined layout",
   "author": {
     "name": "Damian Krzeminski",
