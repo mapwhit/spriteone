@@ -13,7 +13,7 @@ test('empty', async function () {
   assert.ok(Buffer.isBuffer(result));
 });
 
-test('simple', async function () {
+test('simple', async function (t) {
 
   const images = [
     {
@@ -42,8 +42,18 @@ test('simple', async function () {
     }
   };
 
-  const result = await render(images, layout);
-  const expected = await readFile(path.resolve(__dirname, 'fixtures/simple.png'));
-  assert.ok(Buffer.isBuffer(result));
-  assert.equal(Buffer.compare(result, expected), 0, 'should be equal to reference image');
+  await t.test('png', async function () {
+    const result = await render(images, layout);
+    const expected = await readFile(path.resolve(__dirname, 'fixtures/simple.png'));
+    assert.ok(Buffer.isBuffer(result));
+    assert.equal(Buffer.compare(result, expected), 0, 'should be equal to reference image');
+  });
+
+  await t.test('webp', async function () {
+    const result = await render(images, { ...layout, format: 'webp' });
+    const expected = await readFile(path.resolve(__dirname, 'fixtures/simple.webp'));
+    assert.ok(Buffer.isBuffer(result));
+    assert.equal(Buffer.compare(result, expected), 0, 'should be equal to reference image');
+  });
+
 });
