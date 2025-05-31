@@ -15,13 +15,7 @@ test('grid', function () {
     height: 14
   };
 
-  const result = grid([
-    { id: 'a' },
-    { id: 'b' },
-    { id: 'c' },
-    { id: 'd' },
-    { id: 'e' },
-  ], {
+  const result = grid([{ id: 'a' }, { id: 'b' }, { id: 'c' }, { id: 'd' }, { id: 'e' }], {
     dim: { width: 5, height: 7 },
     columns: 3
   });
