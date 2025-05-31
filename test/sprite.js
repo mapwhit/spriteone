@@ -14,7 +14,6 @@ test('empty', async function () {
 });
 
 test('simple', async function (t) {
-
   const images = [
     {
       id: 'r',
@@ -55,5 +54,4 @@ test('simple', async function (t) {
     assert.ok(Buffer.isBuffer(result));
     assert.equal(Buffer.compare(result, expected), 0, 'should be equal to reference image');
   });
-
 });
