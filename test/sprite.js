@@ -1,15 +1,15 @@
-const assert = require('node:assert');
-const { readFile } = require('node:fs/promises');
-const path = require('node:path');
-const test = require('node:test');
-const { render } = require('../lib/sprite.js');
+import assert from 'node:assert';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import test from 'node:test';
+import sprite from '../lib/sprite.js';
 
 test('empty', async () => {
   const layout = {
     dim: { width: 1, height: 1 },
     layout: {}
   };
-  const result = await render([], layout);
+  const result = await sprite([], layout);
   assert.ok(Buffer.isBuffer(result));
 });
 
@@ -42,15 +42,15 @@ test('simple', async t => {
   };
 
   await t.test('png', async () => {
-    const result = await render(images, layout);
-    const expected = await readFile(path.resolve(__dirname, 'fixtures/simple.png'));
+    const result = await sprite(images, layout);
+    const expected = await readFile(path.resolve(import.meta.dirname, 'fixtures/simple.png'));
     assert.ok(Buffer.isBuffer(result));
     assert.equal(Buffer.compare(result, expected), 0, 'should be equal to reference image');
   });
 
   await t.test('webp', async () => {
-    const result = await render(images, { ...layout, format: 'webp' });
-    const expected = await readFile(path.resolve(__dirname, 'fixtures/simple.webp'));
+    const result = await sprite(images, { ...layout, format: 'webp' });
+    const expected = await readFile(path.resolve(import.meta.dirname, 'fixtures/simple.webp'));
     assert.ok(Buffer.isBuffer(result));
     assert.equal(Buffer.compare(result, expected), 0, 'should be equal to reference image');
   });
