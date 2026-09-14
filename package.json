@@ -17,6 +17,8 @@
     "email": "pirxpilot@furkot.com",
     "url": "https://pirxpilot.me"
   },
+  "type": "module",
+  "exports": "./index.js",
   "files": [
     "index.js",
     "lib"

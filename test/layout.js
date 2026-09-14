@@ -1,6 +1,6 @@
-const assert = require('node:assert');
-const test = require('node:test');
-const { grid } = require('../lib/layout.js');
+import assert from 'node:assert';
+import test from 'node:test';
+import { grid } from '../lib/layout.js';
 
 test('grid', () => {
   const expectedLayout = {
