@@ -2,9 +2,9 @@ const assert = require('node:assert');
 const { readFile } = require('node:fs/promises');
 const path = require('node:path');
 const test = require('node:test');
-const { render } = require('../lib/sprite');
+const { render } = require('../lib/sprite.js');
 
-test('empty', async function () {
+test('empty', async () => {
   const layout = {
     dim: { width: 1, height: 1 },
     layout: {}
@@ -13,7 +13,7 @@ test('empty', async function () {
   assert.ok(Buffer.isBuffer(result));
 });
 
-test('simple', async function (t) {
+test('simple', async t => {
   const images = [
     {
       id: 'r',
@@ -41,14 +41,14 @@ test('simple', async function (t) {
     }
   };
 
-  await t.test('png', async function () {
+  await t.test('png', async () => {
     const result = await render(images, layout);
     const expected = await readFile(path.resolve(__dirname, 'fixtures/simple.png'));
     assert.ok(Buffer.isBuffer(result));
     assert.equal(Buffer.compare(result, expected), 0, 'should be equal to reference image');
   });
 
-  await t.test('webp', async function () {
+  await t.test('webp', async () => {
     const result = await render(images, { ...layout, format: 'webp' });
     const expected = await readFile(path.resolve(__dirname, 'fixtures/simple.webp'));
     assert.ok(Buffer.isBuffer(result));

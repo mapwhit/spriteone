@@ -2,32 +2,33 @@
   "name": "@mapwhit/spriteone",
   "version": "1.1.1",
   "description": "Generate sprites based on predefined layout",
-  "author": {
-    "name": "Damian Krzeminski",
-    "email": "pirxpilot@furkot.com",
-    "url": "https://pirxpilot.me"
-  },
+  "keywords": [
+    "icons",
+    "images",
+    "sprite"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mapwhit/spriteone.git"
   },
   "license": "ISC",
-  "keywords": [
-    "mapwhit-sprite",
-    "sprite images icons"
-  ],
-  "dependencies": {
-    "@mapbox/shelf-pack": "^3.2.0",
-    "sharp": "^0.34.2"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
-  },
-  "scripts": {
-    "test": "make check"
+  "author": {
+    "name": "Damian Krzeminski",
+    "email": "pirxpilot@furkot.com",
+    "url": "https://pirxpilot.me"
   },
   "files": [
     "index.js",
     "lib"
-  ]
+  ],
+  "scripts": {
+    "test": "make check"
+  },
+  "dependencies": {
+    "@mapbox/shelf-pack": "^3.2.0",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.13"
+  }
 }
