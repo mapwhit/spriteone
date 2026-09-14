@@ -1,8 +1,8 @@
 const assert = require('node:assert');
 const test = require('node:test');
-const { grid } = require('../lib/layout');
+const { grid } = require('../lib/layout.js');
 
-test('grid', function () {
+test('grid', () => {
   const expectedLayout = {
     a: { width: 5, height: 7, x: 0, y: 0, pixelRatio: 1 },
     b: { width: 5, height: 7, x: 5, y: 0, pixelRatio: 1 },

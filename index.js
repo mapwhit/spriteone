@@ -1,5 +1,5 @@
-const sprite = require('./lib/sprite');
-const layout = require('./lib/layout');
+const sprite = require('./lib/sprite.js');
+const layout = require('./lib/layout.js');
 
 module.exports = {
   sprite,
