@@ -1,4 +1,11 @@
 
+1.1.2 / 2026-09-14
+==================
+
+ * update github actions
+ * upgrade `sharp` to ^0.35.4
+ * upgrade `biome` to 2.5.13
+
 1.1.1 / 2025-05-31
 ==================
 
